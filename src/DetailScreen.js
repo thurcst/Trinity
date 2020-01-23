@@ -5,6 +5,10 @@ export default class DetailScreen extends Component {
     
     constructor(props){
         super(props);
+
+        this.state = {
+            github_login: ""
+        }
     }
 
     render() {
