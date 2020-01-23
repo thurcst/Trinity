@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { usuario_encontrado } from "./auth.js";
-import Autenticador, { render } from "./Componentes/Autenticador";
 import './routes.css'
 import './DetailScreen'
 import MainMenu from "./MainMenu";
+import DetailScreen from "./DetailScreen";
 
 const ROTA_PRIVADA = ({ component: Component, ...rest}) => (
     <Route 
@@ -27,11 +27,17 @@ const Routes = () => ( //Rota publica e privada, rota publica é a tela inicial,
                 <div>
                     <MainMenu className = 'first-Screen'></MainMenu>
                 </div>
-                
                 )
                 }} 
             />  
-            <ROTA_PRIVADA path="/app" component={() => <h1>Você está logado!</h1>}/>
+            <ROTA_PRIVADA path="/app" component={() => {
+                return(
+                    <div>
+                        <DetailScreen/>
+                    </div>
+                )
+            }
+            }/>
         </Switch>
     </BrowserRouter>
 

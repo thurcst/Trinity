@@ -1,8 +1,17 @@
 .title{
     color: white;
     margin-top: 350px;
+    margin-left: -90px;
+    text-align: center;
+}
+
+.second_title{
+    color: white;
+    margin-top: -65px;
+    margin-left: 120px;
     font-style: italic;
     text-align: center;
+    font-size: 35px;
 }
 
 .SearchBox{
