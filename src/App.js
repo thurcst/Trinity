@@ -5,13 +5,4 @@ import DetailScreen from './DetailScreen'
 
 const App = () => <Routes/>;
 
-// function App() {
-//     return (
-//       <div className="App">
-//         <DetailScreen github_login=""></DetailScreen>
-//       </div>
-//     );
-//   }
-  
-
 export default App;

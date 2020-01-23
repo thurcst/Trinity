@@ -6,19 +6,19 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 export default class MainMenu extends Component{
-
+    // Classe do menu principal, contendo todas as funções e roteiros de execução (scripts)
     constructor(props){
         super(props);
 
         this.state = {
             github_login: ""
-            
         }
-        
+
         this.autenticar = this.autenticar.bind(this);
     }
 
     autenticar(){
+        localStorage.clear();
         console.log("Entrei");
         console.log(this.state.github_login);
         let username    = `${this.state.github_login}`
