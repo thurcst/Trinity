@@ -18,12 +18,12 @@ export default class MainMenu extends Component{
     }
 
     autenticar(){
-        // Função autenticar envia o username dado pelo usuário para a API do github, recebendo suas informações ou um 'not found'
-        localStorage.clear();
+        // Função autenticar envia o username dado pelo usuário para a API do github, recebendo suas informações ou um 'not found' em message
+        localStorage.clear(); // sempre limpar antes de autenticar novamente para não ficar informação de um outro usuário pesquisado
         let username    = `${this.state.github_login}`
         let url         = `https://api.github.com/users/${username}`
         let url_repos   = `https://api.github.com/users/${username}/repos`
-        fetch(url).then(res=>{return res.json()}).then(
+        fetch(url).then(res=>{return res.json()}).then(                 // Aqui fazemos o fetch das informações do usuário, recebendo todas as infos importantes
             json=>{
                 localStorage.setItem('@Trinity/message', json.message);
                 localStorage.setItem('@Trinity/nome', json.name);
@@ -36,6 +36,7 @@ export default class MainMenu extends Component{
         )
         fetch(url_repos).then(res=>{return res.json()}).then(
             json=>{
+                // Aqui armazenamos os repositórios, cada um identificado pelo número 0 a x, de acordo com a quantidade de repositórios.
                 let quant_repos = localStorage.getItem('@Trinity/repositories');
                 for (let i = 0; i < quant_repos; i++) {
                     localStorage.setItem(`@Trinity/repo${i}`,json[i].name);

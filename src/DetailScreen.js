@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './DetailScreen.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBoxOpen,faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBoxOpen,faMapMarkerAlt, faStar, faUserFriends } from '@fortawesome/free-solid-svg-icons'
 import Repositories from './Repositories'
 import MainMenu from './MainMenu'
 
@@ -49,7 +49,7 @@ export default class DetailScreen extends Component {
          */        
     }
 
-
+    // Toda tela de detalhes está aqui, a caixa do usuário, a barra de titulo, barra de pesquisa e onde ficariam os repositórios
     render() {
         return (
             <div className = 'detalhes'> 
@@ -60,13 +60,13 @@ export default class DetailScreen extends Component {
                             </h3>
                             
                             <p className= 'location'>
-                                <FontAwesomeIcon icon   = {faMapMarkerAlt} className  = 'search-btn'/> - {this.state.location}
+                                <FontAwesomeIcon icon   = {faMapMarkerAlt} className  = 'search-btn'/> {this.state.location}
                             </p>
                             <p className = 'repositories'>
-                                <FontAwesomeIcon icon   = {faBoxOpen} className  = 'search-btn'/> - {this.state.repos}
+                                <FontAwesomeIcon icon   = {faBoxOpen} className  = 'search-btn'/> {this.state.repos}
                             </p>
                             <p className = 'followers'>
-                                <FontAwesomeIcon icon   = {faStar} className  = 'search-btn'/> - {this.state.followers}
+                                <FontAwesomeIcon icon   = {faUserFriends} className  = 'search-btn'/> {this.state.followers}
                             </p>
                         </div>
                     <div>
@@ -89,7 +89,10 @@ export default class DetailScreen extends Component {
                             </div>    
                         </div>
                         <div className = 'repo'>
-                            <Repositories/>
+                            <h1> (Repositório viria aqui)</h1>
+                            <p> 
+                            <FontAwesomeIcon icon   = {faStar} className  = 'search-btn'/> - Qtd. Estrelas
+                            </p>
                         </div>
             </div>
 

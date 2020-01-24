@@ -8,7 +8,6 @@ import './DetailScreen.css'
 export const usuario_encontrado = () => {
         let CHECK_MSG = localStorage.getItem('@Trinity/message');   //CHECK_MSG recebe a mensagem salva no localStore, caso ela seja 'not found' enviamos false para a rota
         if(CHECK_MSG == 'Not Found'){
-
             return  false;
         }
         else{

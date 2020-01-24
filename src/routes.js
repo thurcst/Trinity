@@ -10,9 +10,9 @@ const ROTA_PRIVADA = ({ component: Component, ...rest}) => (
     <Route 
         {...rest} 
             render={props =>(
-                usuario_encontrado() ? (                         // Se o usuário existir, damos a ele os componentes para poder usar o /app
+                usuario_encontrado() ? (        // Se o usuário existir, damos a ele os componentes para poder usar o /app
                      <Component {...props} />
-                ) : (                                           // Caso não esteja, o enviamos de volta para a tela inicial, com todo o histórico salvo
+                ) : (                           // Caso não esteja, o enviamos de volta para a tela inicial, com todo o histórico salvo
                     <Redirect to={{ pathname: '/', state: { from: props.location}}}/>
                 )
             )
@@ -20,7 +20,12 @@ const ROTA_PRIVADA = ({ component: Component, ...rest}) => (
     />
 );
 
-const Routes = () => ( //Rota publica e privada, rota publica é a tela inicial, onde se recebe o nome do usuário do github, a privada é a tela de detalhes e onde ficará os repositórios
+// Rota publica e privada, rota publica é a tela inicial, todos tem acesso, 
+// onde se recebe o nome do usuário do github, a privada é a tela de detalhes
+// e onde ficariam os repositórios, o qual só consegue ser acessada se
+// o usuário pesquisado existir
+
+const Routes = () => (  
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component = { () => {return(

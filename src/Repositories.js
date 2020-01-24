@@ -20,7 +20,9 @@ export default class Repositories extends Component {
     }
 
 
-
+    // Essa função renderizaria todos os repositórios do usuário
+    // entretanto, não achei uma forma de fazer o ARRAY repository receber as informações
+    // do localStorage
     render() {
         return (
             <div>
