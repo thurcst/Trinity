@@ -1,6 +1,42 @@
-.Titulo{
+.Github{
     color: white;
-    margin-top: 350px;
-    margin-left: -90px;
+}
+.Search{
+    color: white;
+    font-style: italic;
+    font-size: 35px;
+}
+
+.new_name_search, .new_name {
+    position: absolute;
+}
+.personal_info{
+    border-radius: 5%;
+    background-color: #2f3640;
+    margin-left: 40px;
+    margin-top: 90px;
+    position: relative;
+    color: white;
     text-align: center;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.img{
+    border-radius: 50%;
+    max-width: 200px;
+}
+
+.search_name{
+    width: 250px;
+    height: 35px;
+    border-style: none;
+    background-color: #2f3640;
+    max-width: 900px;
+    position: relative;
+    border-radius: 10px;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
 }

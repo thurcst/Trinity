@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import './MainMenu.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Routes from './routes'
 
 
 export default class MainMenu extends Component{
@@ -33,6 +35,8 @@ export default class MainMenu extends Component{
                 localStorage.setItem('@Trinity/repositories',json.public_repos);
                 localStorage.setItem('@Trinity/followers', json.followers);
                 localStorage.setItem('@Trinity/location',json.location);
+                localStorage.setItem('@Trinity/avatar', json.avatar_url);
+
             }
         )
         fetch(url_repos).then(res=>{return res.json()}).then(
@@ -53,7 +57,7 @@ export default class MainMenu extends Component{
                 <h2 className = "second_title"> Search </h2>
                 <div className = "SearchBox">
                     <input className = "user_input" type = "text" placeholder = 'type your git user' onChange = {(event)=>{this.setState({github_login:event.target.value})}} />
-                    <button className = 'SearchButton'  onClick = {this.autenticar}> 
+                    <button className = 'SearchButton'  onClick = {this.autenticar} > 
                         <FontAwesomeIcon icon   = {faSearch} className  = 'search-btn'/>
                     </button>
                 </div>
