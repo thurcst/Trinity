@@ -10,7 +10,7 @@ const ROTA_PRIVADA = ({ component: Component, ...rest}) => (
     <Route 
         {...rest} 
             render={props =>(
-                usuario_encontrado() ? (                         // Se o usuário estiver logado, damos a ele os componentes necessários encontrados em props
+                usuario_encontrado() ? (                         // Se o usuário existir, damos a ele os componentes para poder usar o /app
                      <Component {...props} />
                 ) : (                                           // Caso não esteja, o enviamos de volta para a tela inicial, com todo o histórico salvo
                     <Redirect to={{ pathname: '/', state: { from: props.location}}}/>

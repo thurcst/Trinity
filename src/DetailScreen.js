@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import './DetailScreen.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faBoxOpen,faLocationArrow, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faBoxOpen,faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons'
+import Repositories from './Repositories'
+import MainMenu from './MainMenu'
 
 /*  
 O localStorage contém:
@@ -27,6 +29,7 @@ export default class DetailScreen extends Component {
         var repositories;
 
         this.state = {
+            // Recebendo de volta todos os valores salvos no localStorage
             nome            : localStorage.getItem('@Trinity/nome'),
             user            : localStorage.getItem('@Trinity/usuario'),
             repos           : localStorage.getItem('@Trinity/repositories'),
@@ -37,31 +40,30 @@ export default class DetailScreen extends Component {
             repositories    : new Array(repos)
 
         }
+        /*
+        #### DEBUG: 
         
         console.log("Nome: " + this.state.nome);
         console.log("Usuário: " + this.state.user);
         console.log(this.state.avatar)
-        for (let i = 0; i < repos ; i++) {
-            repositories[i] = localStorage.getItem(`@Trinity/repo${i}`);
-            
-        }
+         */        
     }
 
 
     render() {
         return (
-            <div className = 'detalhes'>
+            <div className = 'detalhes'> 
                         <div className = 'personal_info'>
                             <img className = 'img' src={this.state.avatar} alt="imagem_usuário"/> 
                             <h3 className = 'Nome'>
                                 @{this.state.user}
                             </h3>
-                            <p className = 'repositories'>
-                                <FontAwesomeIcon icon   = {faBoxOpen} className  = 'search-btn'/> - {this.state.repos}
-                            </p>
                             
                             <p className= 'location'>
-                                <FontAwesomeIcon icon   = {faLocationArrow} className  = 'search-btn'/> - {this.state.location}
+                                <FontAwesomeIcon icon   = {faMapMarkerAlt} className  = 'search-btn'/> - {this.state.location}
+                            </p>
+                            <p className = 'repositories'>
+                                <FontAwesomeIcon icon   = {faBoxOpen} className  = 'search-btn'/> - {this.state.repos}
                             </p>
                             <p className = 'followers'>
                                 <FontAwesomeIcon icon   = {faStar} className  = 'search-btn'/> - {this.state.followers}
@@ -83,8 +85,11 @@ export default class DetailScreen extends Component {
                         <div className = 'search_screen'>
                             <div className = 'search_box'>
                                 <input className = 'search_name' type='text' placeholder='type your git user' />
-                                <button className = 'search_button' ><FontAwesomeIcon icon   = {faSearch} className  = 'search-btn'/></button>
+                                <button className = 'search_button' onClick={MainMenu.autenticar} ><FontAwesomeIcon icon   = {faSearch} className  = 'search-btn'/></button>
                             </div>    
+                        </div>
+                        <div className = 'repo'>
+                            <Repositories/>
                         </div>
             </div>
 
