@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Landing from './pages/langing'
+import Landing from './pages/landing'
 import Results from './pages/search-screen'
 
 function Routes(){

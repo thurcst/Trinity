@@ -5,7 +5,7 @@
 
 
 #logo{
-    width: 5%;
+    width: 10vh;
     height: 5%;
   }
   
@@ -25,7 +25,17 @@
     display: flex;
   }
   
+  #form{
+    padding-top: 30px;
+    border-radius: 30px;
+    width: 50vw;
+    min-width: 20vh;
+
+
+  }
+
   .embed-submit-field {
+    border-radius: 30px;
     position: relative;
   
   }
