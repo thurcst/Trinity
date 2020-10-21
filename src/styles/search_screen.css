@@ -97,6 +97,7 @@
 }
 
 #avatar{
+    background-color: #fafafa;
     max-width: 102px;
     overflow: hidden;
 }
